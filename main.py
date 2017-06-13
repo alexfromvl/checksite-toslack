@@ -6,6 +6,8 @@ from slacker import Slacker
 
 slack = Slacker('TOKEN-SLACK-BOT')
 
+TIMERSLEEP = 10
+
 site_pages = [
 'https://google.com',
 'https://yandex.ru'
@@ -15,7 +17,7 @@ failed_pages = [];
 
 def check_pages (pages):
   while True:
-		time.sleep(10)
+		time.sleep(TIMERSLEEP)
 		try:
 			for page_url in pages:
 				code = urllib.request.urlopen(page_url).getcode()
