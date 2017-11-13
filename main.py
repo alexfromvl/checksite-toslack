@@ -20,7 +20,7 @@ def check_pages (pages):
 	while True:
 		try:
 			for page_url in pages:
-				code = urllib.request.urlopen(page_url).getcode()
+				code = urllib.request.urlopen(page_url, timeout=15).getcode()
 				time.sleep(TIMERSLEEP)
 				t_error = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime())
 				if (code not in [200, 301]):
